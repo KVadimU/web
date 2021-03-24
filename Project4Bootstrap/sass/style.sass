@@ -1,3 +1,4 @@
+$color_blue: #1EACC7
 *
   font-family: 'Roboto', sans-serif
 
@@ -164,7 +165,7 @@ nav
     margin-right: 26px
     width: 113px
     height: 113px
-    background-color: #1eacc7
+    background-color: $color_blue
     border-radius: 100%
 
   .advant_descr
@@ -172,7 +173,7 @@ nav
 
     .advant_subtitle
       line-height: 21px
-      color: #1eacc7
+      color: $color_blue
       font-size: 17px
       font-weight: 400
 
@@ -189,6 +190,7 @@ nav
 	.row
 		margin-top: 32px
 	&_item
+		position: relative
 		width: 320px
 		height: 280px
 		margin: 0 auto
@@ -214,8 +216,21 @@ nav
 			text-transform: uppercase;
 			color: #FFFFFF;
 		&_plus
+			display: flex
+			justify-content: center
+			align-items: center
+			position: absolute
+			bottom: 35px
+			left: 50%
+			transform: translateX(-50%)
 			width: 26px
 			height: 26px
 			background-color: #000000
 			margin: 0 auto
 			border-radius: 100%
+			cursor: pointer
+.car
+	min-height: 900px
+	padding: 60px 0 260px 0
+			
+			
