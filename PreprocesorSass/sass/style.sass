@@ -1,0 +1,20 @@
+$text_color: red
+@mixin box
+    display: block
+    width: 250px
+    height: 200px
+    background-color: crimson
+h1
+    color: $text_color
+    font-size: 50px
+    @include box
+h2
+    color: blue
+.block
+    background-color: green
+    h3
+        color: purple
+    &_color
+        background-color: yellow
+        button
+            @include box

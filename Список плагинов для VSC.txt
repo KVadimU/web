@@ -1,0 +1,12 @@
+1. All Autocomplete
+2. Auto Close Tag
+3. Auto Complete Tag
+4. Auto Rename Tag
+5. Code Runner
+6. JavaScript (ES6) code snippets
+7. Live Server
+8. Multiple clipboards for VSCode
+9. Sass
+10. Easy Less
+11. Theme - Oceanic Next (опционально)
+12. vscode-icons
