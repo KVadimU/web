@@ -1,4 +1,12 @@
 $color_blue: #1EACC7
+$main_color:  #00BFFF
+$second_color:  #0000CD
+$three_color: #FF00FF
+@mixin btn_hover
+  &:hover
+    background-image: none
+    background-color: $main_color
+
 *
   font-family: 'Roboto', sans-serif
 
@@ -58,19 +66,21 @@ nav
     color: #FFFFFF
     text-align: right
 
-  .subheader_btn
+  &_btn
     width: 172px
     height: 46px
     background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
     box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.12)
     border-radius: 4px
     font-weight: 400
-    font-size: 14px
+    font-size: 14    
     text-align: center
     text-transform: uppercase
     color: #FFFFFF
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
     margin-top: 19px
+    @include btn_hover
+  
 
 .promo
   min-height: 800px
@@ -104,7 +114,7 @@ nav
     color: #FFFFFF
     margin-top: 23px
 
-  .promo_btn
+  &_btn
     display: block
     margin: 118px auto 0 auto
     background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
@@ -118,6 +128,7 @@ nav
     text-transform: uppercase
     color: #FFFFFF
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+    @include btn_hover
 
 .label
   position: relative
@@ -239,6 +250,28 @@ nav
       margin: 0 auto
       border-radius: 100%
       cursor: pointer
+      &:before
+        content: ''
+        display: block
+        width: 14px
+        height: 2px
+        background-color: $color_blue
+        transition: 0.3s all
+      &:after
+        content: ''
+        position: absolute
+        left: 50%
+        transform: translateX(-50%)
+        display: block
+        height: 14px
+        width: 2px
+        background-color: $color_blue
+        transition: 0.3s all
+      &:hover
+        &:before, &:after
+          background-color: $three_color         
+        
+        
 .car
   position: relative
   min-height: 900px
@@ -261,6 +294,10 @@ nav
     line-height: 24px
     text-align: center
     color: #222222
+.require
+  padding: 70px 0 90px 0
+  &_block
+    margin: 33px 0
 
   
   
