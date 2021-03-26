@@ -1,7 +1,8 @@
 $color_blue: #1EACC7
 $main_color:  #00BFFF
 $second_color:  #0000CD
-$three_color: #FF00FF
+$three_color: #FF5656;
+
 @mixin btn_hover
   &:hover
     background-image: none
@@ -269,9 +270,7 @@ nav
         transition: 0.3s all
       &:hover
         &:before, &:after
-          background-color: $three_color         
-        
-        
+          background-color: $three_color                
 .car
   position: relative
   min-height: 900px
@@ -298,6 +297,56 @@ nav
   padding: 70px 0 90px 0
   &_block
     margin: 33px 0
+    &_nmb
+      margin-bottom: 0px
+  &_title
+    font-weight: 400
+    font-size: 22px;
+    color: $color_blue
+  &_list
+    list-style-type: none
+    padding-left: 50px
+    margin-top: 22px
+    li
+      position: relative
+      font-weight: 300
+      font-size: 17px
+      color: #222222
+      margin-bottom: 10px
+      &:before
+        position: absolute
+        left: -32px
+        top: 3px
+        content: ''
+        display: block
+        width: 21px
+        height: 20px
+        background: url("../img/ico/check_blue.png") center (center/cover) no-repeat
+  &_description
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 24px;
+    color: $color_blue
+  .warning
+    .require_title
+      color: $three_color
+    .require_list
+      li
+        &:before
+          background: url("../img/ico/check_red.png") center (center/cover) no-repeat
+.world
+  min-height: 720px
+  background: url("../img/world_bg.jpg") center no-repeat #080816
+  
+    
+  
+    
+
+          
+  
+
+
+        
 
   
   
