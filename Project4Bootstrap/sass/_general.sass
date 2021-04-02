@@ -4,6 +4,8 @@ nav
   background: #212121
   position: fixed
   z-index: 2
+.hamburger
+  display: none
 
 .menu
   display: flex
@@ -22,6 +24,7 @@ nav
     padding-right: 28px
     &:last-child
         border-right: none
+  
 
 .subheader
   position: absolute
@@ -50,7 +53,7 @@ nav
     text-align: right
 
   &_phone
-    margin-top: 8px
+    display: block
     font-weight: 400
     font-size: 22px
     color: #FFFFFF
@@ -70,6 +73,8 @@ nav
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
     margin-top: 19px
     @include btn_hover
+
+
   
 
 .promo
@@ -409,5 +414,5 @@ footer
       margin-top: 19px
       text-transform: uppercase
       text-align: center
-.xs-visible 
+.xs-visible
   display: none
