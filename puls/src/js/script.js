@@ -26,7 +26,21 @@ const slider = tns({
     autoplay: false,
     speed: 1200,
     controls: false,
-    navPosition: 'bottom'
+    navPosition: 'bottom',
+    responsive: {
+        640: {
+          edgePadding: 20,
+          gutter: 20,
+          items: 2
+        },
+        700: {
+          gutter: 30
+        },
+        900: {
+          items: 1
+        }
+      }
+   
   });
 document.querySelector('.prev').addEventListener('click', function () {
     slider.goTo('prev');
