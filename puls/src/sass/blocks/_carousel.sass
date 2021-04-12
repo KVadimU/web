@@ -1,5 +1,43 @@
 .carousel
     padding: 81px 0
     &__inner
+        position: relative
         width: 750px
         margin: 0 auto
+    .prev, .next
+        position: absolute
+        top: 50%
+        left: -66px
+        transform: translateY(-50%)
+        display: block
+        border: none
+        background-color: #fff
+        &:focus
+            outline: none
+        img
+            width: 31px
+            height: 50px
+    .next
+        left: auto
+        right: -66px
+    .tns-item
+        img
+            display: block
+            margin: 0 auto
+    .tns-nav
+        margin-top: 30px
+        text-align: center
+        .tns-nav-active
+            background-color: $color_text
+
+        button
+            margin-right: 10px
+            width: 30px
+            height: 30px
+            border-radius: 100%
+            border: none
+            background-color: $color_button
+            &:focus
+                outline: none
+            &:active
+                background-color: $color_text
