@@ -2,7 +2,10 @@
 window.addEventListener('DOMContentLoaded', function(){
     let tabs = document.querySelector('.catalog__tabs'),
         tab = document.querySelectorAll('.catalog__tab'),
-        catalog = document.querySelectorAll('.catalog__content');
+        catalog = document.querySelectorAll('.catalog__content'),
+        link = document.querySelectorAll('.catalog-item__link'),
+        linkBack = document.querySelectorAll('.catalog-item__back'),
+        list = document.querySelectorAll('.catalog-item__list');
        
         tabs.addEventListener('click', function(event){
             let li = event.target.closest('li'),//closset()-возвращает ближайшего предка
@@ -21,5 +24,23 @@ window.addEventListener('DOMContentLoaded', function(){
                 }
              }
             }
+            
         });
+        link.forEach(function(item, i, link){
+            item.addEventListener('click', function(event){
+               event.preventDefault();//Отменяем стандартный переход по ссылке
+               this.parentNode.classList.remove('catalog-item__content_active');
+               list.forEach(function(item, y, link){
+                    if(i == y){
+                        item.classList.add('catalog-item__list_active');
+                        console.log(item.lastElementChild);
+                        item.lastElementChild.addEventListener('click',function(event){
+                            event.preventDefault();
+                            item.classList.remove('catalog-item__list_active');
+                            item.previousElementSibling.classList.add('catalog-item__content_active'); 
+                        });
+                    }
+               });
+        });
+    });  
 });
