@@ -9,9 +9,18 @@
     &__item
         display: flex
         margin-top: 60px
-        img
+        position: relative
+        &__img
+            display: block
             width: 169px
             height: 169px
+            overflow: hidden
+            border-radius: 100%
+            img
+                display: block
+                transition: 1s all
+                &:hover
+                    transform: scale(1.2);
         &__title
             position: relative
             display: block
@@ -28,4 +37,7 @@
                 color: #646464
                 display: block
         &__text
-            margin-left: 60px
+            width: 718px
+            position: absolute
+            top: 0
+            right: 0

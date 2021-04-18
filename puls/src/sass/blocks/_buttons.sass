@@ -1,7 +1,9 @@
 .button
     width: 153px
     height: 32px
-    background: $color_button
+    background-color: $color_button
+    transition-property: background-color
+    transition-duration: 1s
     border: none
     border-style: none
     font-size: 12px
@@ -10,6 +12,7 @@
     color: $color_text
     &:hover
         outline: none
+        background-color: $color_button_dark
     &:focus
         outline: none
     &_main
@@ -27,8 +30,13 @@
         color: $color_text
         border: none
         border-style: none
+        transition: 0.5s all
         &:hover
             outline: none
+            &::before
+            content: ''
+            background: linear-gradient(45deg, red, blue);
+
     &_mini
         width: 135px
         height: 44px

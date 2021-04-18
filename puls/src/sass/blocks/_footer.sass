@@ -1,0 +1,47 @@
+.footer
+    position: relative
+    height: 630px
+    &__info
+        position: absolute
+        top: 0
+        left: 50%
+        transform: translateX(-50%)
+        width: 460px
+        height: 270px
+        background: $color_button
+        padding: 50px 58px 60px 58px
+    &__addr
+        margin-bottom: 36px
+        text-align: center
+        font-weight: 500
+        font-size: 20px
+        line-height: 20px
+        color: $color_text
+    &__phone
+        display: block
+        font-weight: 700
+        font-size: 20px
+        text-align: center
+        line-height: 20px
+        color: $color_text
+        margin-bottom: 36px
+        &:hover
+            color: $color_text
+            text-decoration: none
+    &__social-item
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 100%
+        background-color: $color_button
+        transition-property: background-color
+        transition-duration: 1s
+        width: 52px
+        height: 52px
+        margin: 0 15px
+        &:hover
+            background-color: $color_button_dark
+
+    &__social
+        display: flex
+        justify-content: center
