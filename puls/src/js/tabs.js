@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', function(){
         tab = document.querySelectorAll('.catalog__tab'),
         catalog = document.querySelectorAll('.catalog__content'),
         link = document.querySelectorAll('.catalog-item__link'),
-        linkBack = document.querySelectorAll('.catalog-item__back'),
         list = document.querySelectorAll('.catalog-item__list');
        
         tabs.addEventListener('click', function(event){
@@ -43,4 +42,27 @@ window.addEventListener('DOMContentLoaded', function(){
                });
         });
     });  
+    //MODAL
+    let modal = document.getElementsByTagName('button')[0],
+        overlay = document.querySelector('.overlay'),
+        modalConsultatin = document.getElementById('consultation'),
+        modalClose = document.querySelectorAll('.modal__close')[0];
+
+        modal.getAttribute("consultation");
+       // modal.style.display = 'none';
+       function closeModal(){
+            modalConsultatin.style.display = 'none';
+            overlay.style.display = 'none';
+       }
+       modal.addEventListener('click', function(){
+                overlay.style.display = 'block';
+                modalConsultatin.style.display = 'block';
+       });
+       modalClose.addEventListener('click', function(){
+                modalConsultatin.style.display = 'none';
+                overlay.style.display = 'none';
+
+               
+        });
+
 });

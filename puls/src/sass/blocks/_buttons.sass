@@ -22,7 +22,9 @@
         font-size: 16px
     &_submit
         width: 100%
-        background: $color_button
+        background-image: linear-gradient(45deg, #e93232 0%, #C70101 50%, #2b27f7 100%)
+        background-position: 100% 0
+        background-size: 200% 200%
         font-weight: 500
         font-size: 16px
         height: 58px
@@ -30,13 +32,11 @@
         color: $color_text
         border: none
         border-style: none
-        transition: 0.5s all
+        transition: .5s all
         &:hover
+            background-position: 0 0
+        &:active
             outline: none
-            &::before
-            content: ''
-            background: linear-gradient(45deg, red, blue);
-
     &_mini
         width: 135px
         height: 44px
