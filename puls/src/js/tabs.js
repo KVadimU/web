@@ -43,26 +43,21 @@ window.addEventListener('DOMContentLoaded', function(){
         });
     });  
     //MODAL
-    let modal = document.getElementsByTagName('button')[0],
+    let buttonConsultation = document.querySelectorAll('[data-modal = "consultation"]'),
         overlay = document.querySelector('.overlay'),
-        modalConsultatin = document.getElementById('consultation'),
-        modalClose = document.querySelectorAll('.modal__close')[0];
+        modalConsultatin = document.getElementById('consultation');
+        
 
-        modal.getAttribute("consultation");
-       // modal.style.display = 'none';
-       function closeModal(){
-            modalConsultatin.style.display = 'none';
-            overlay.style.display = 'none';
-       }
-       modal.addEventListener('click', function(){
+        buttonConsultation.forEach(function(item, i, buttonConsultation){
+            item.addEventListener('click', function(event){
                 overlay.style.display = 'block';
                 modalConsultatin.style.display = 'block';
-       });
-       modalClose.addEventListener('click', function(){
+            });
+            modalConsultatin.firstElementChild.addEventListener('click', function(){
                 modalConsultatin.style.display = 'none';
                 overlay.style.display = 'none';
-
-               
+            });
         });
+      
 
 });
