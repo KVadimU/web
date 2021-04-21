@@ -32,7 +32,7 @@ window.addEventListener('DOMContentLoaded', function(){
                list.forEach(function(item, y, link){
                     if(i == y){
                         item.classList.add('catalog-item__list_active');
-                        console.log(item.lastElementChild);
+                       // console.log(item.lastElementChild);
                         item.lastElementChild.addEventListener('click',function(event){
                             event.preventDefault();
                             item.classList.remove('catalog-item__list_active');
@@ -44,18 +44,46 @@ window.addEventListener('DOMContentLoaded', function(){
     });  
     //MODAL
     let buttonConsultation = document.querySelectorAll('[data-modal = "consultation"]'),
+        buttonMini = document.querySelectorAll('.button_mini'),
         overlay = document.querySelector('.overlay'),
         modalConsultatin = document.getElementById('consultation');
         
 
         buttonConsultation.forEach(function(item, i, buttonConsultation){
             item.addEventListener('click', function(event){
+              
+                let str = getComputedStyle(overlay).backgroundColor,
+                    alphaStart = 0.00,
+                    regexp = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,(\s*\d+[\.\d+]*)*\)/g.exec(str);//строку в массив
+                    //found = str.match(regexp);
+                    let timer = setInterval(fadein, 15);
+
+                function fadein(){    
+                   if(parseFloat(alphaStart).toFixed(10) == parseFloat(regexp[4])){
+                       clearInterval(timer);
+                   }else{
+                       alphaStart = alphaStart + 0.01;
+                       overlay.style.backgroundColor = "rgba("+[regexp[1],regexp[2],regexp[3], alphaStart]+")"; 
+                   }
+               }
                 overlay.style.display = 'block';
                 modalConsultatin.style.display = 'block';
+                document.body.style.position = 'fixed';
             });
             modalConsultatin.firstElementChild.addEventListener('click', function(){
                 modalConsultatin.style.display = 'none';
                 overlay.style.display = 'none';
+                document.body.style.position = '';
+               
+            });
+        });
+        //modal
+        //----------------------------------------------------
+        //catalog
+        buttonMini.forEach(function(item, i, button_main){
+            item.addEventListener('click', function(event){
+                // target = event.target;
+                 console.log(i);
             });
         });
       
