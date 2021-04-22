@@ -44,29 +44,31 @@ window.addEventListener('DOMContentLoaded', function(){
     });  
     //MODAL
     let buttonConsultation = document.querySelectorAll('[data-modal = "consultation"]'),
-        buttonMini = document.querySelectorAll('.button_mini'),
         overlay = document.querySelector('.overlay'),
         modalConsultatin = document.getElementById('consultation');
-        
 
+        function overlayShow(){
+            let str = getComputedStyle(overlay).backgroundColor,
+            alphaStart = 0.00,
+            regexp = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,(\s*\d+[\.\d+]*)*\)/g.exec(str);//строку в массив
+            //found = str.match(regexp);
+            let timer = setInterval(fadein, 15);
+
+        function fadein(){    
+           if(parseFloat(alphaStart).toFixed(10) == parseFloat(regexp[4])){
+               clearInterval(timer);
+           }else{
+               alphaStart = alphaStart + 0.01;
+               overlay.style.backgroundColor = "rgba("+[regexp[1],regexp[2],regexp[3], alphaStart]+")"; 
+           }
+        }
+            overlay.style.display = 'block';
+        }
+        
         buttonConsultation.forEach(function(item, i, buttonConsultation){
             item.addEventListener('click', function(event){
-              
-                let str = getComputedStyle(overlay).backgroundColor,
-                    alphaStart = 0.00,
-                    regexp = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*,(\s*\d+[\.\d+]*)*\)/g.exec(str);//строку в массив
-                    //found = str.match(regexp);
-                    let timer = setInterval(fadein, 15);
-
-                function fadein(){    
-                   if(parseFloat(alphaStart).toFixed(10) == parseFloat(regexp[4])){
-                       clearInterval(timer);
-                   }else{
-                       alphaStart = alphaStart + 0.01;
-                       overlay.style.backgroundColor = "rgba("+[regexp[1],regexp[2],regexp[3], alphaStart]+")"; 
-                   }
-               }
-                overlay.style.display = 'block';
+        
+                overlayShow();
                 modalConsultatin.style.display = 'block';
                 document.body.style.position = 'fixed';
             });
@@ -80,10 +82,20 @@ window.addEventListener('DOMContentLoaded', function(){
         //modal
         //----------------------------------------------------
         //catalog
-        buttonMini.forEach(function(item, i, button_main){
+        let buttonMini = document.querySelectorAll('.button_mini'),
+            modalOrder = document.getElementById('order');
+        buttonMini.forEach(function(item, i, buttonMini){
             item.addEventListener('click', function(event){
                 // target = event.target;
-                 console.log(i);
+                let catalogItemSubtitle = item.parentNode.parentNode.firstElementChild.firstElementChild.firstElementChild.nextElementSibling.textContent;
+                    modalOrder.firstElementChild.nextElementSibling.nextElementSibling.textContent = catalogItemSubtitle;
+                overlayShow();
+                modalOrder.style.display = 'block';
+            });
+            modalOrder.firstElementChild.addEventListener('click',function(){
+                modalOrder.style.display = 'none';
+                overlay.style.display = 'none';
+                
             });
         });
       
