@@ -98,6 +98,58 @@ window.addEventListener('DOMContentLoaded', function(){
                 
             });
         });
+        //validationForm
+        let formsConsultation = document.querySelectorAll('.feed-form')[1],
+            //regPhone = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+            regPhone2 = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/;
+
+            formsConsultation.addEventListener('submit', formSend);
+
+            function formSend(e){
+                e.preventDefault();
+                let error = formValidate(formsConsultation);
+
+            }
+        
+            function formValidate(formsConsultation){
+                let error = 0,
+                    formInp = formsConsultation.querySelectorAll('input');
+                 for (let i = 0; i < formInp.length; i++) {
+                     const input = formInp[i];
+                     console.log(input);
+                     removeError(input);
+                     if(i == 2){   //проверяем email
+                         console.log(input.value);
+                         if(testEmail(input)){
+                             addError(input);
+                             error++;
+                         }
+
+                     }else if(input.value === ''){
+                         addError(input);
+                         error++;
+
+                     }else if(i == 1 && !regPhone2.test(input.value)){ //проверяем телефон
+                        addError(input);
+                        error++;
+                     }
+                     
+                 }
+                 return error;
+            }
+            function addError(input){
+                input.nextElementSibling.style.display = 'inline-block';
+                input.nextElementSibling.textContent = 'Поле не заполнено!';
+            }
+            function removeError(input){
+                input.nextElementSibling.style.display = 'none';
+                input.nextElementSibling.textContent = '';
+
+            }
+            function testEmail(input){
+                return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
+
+            }
       
 
 });

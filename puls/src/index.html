@@ -95,9 +95,9 @@
             <div class="consultation__descr">Просто заполните форму заявки<br> 
                 и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form" action="#">
-                <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваше E-mail" type="email">
+                <input name="name" required placeholder="Ваше имя" maxlength="15" type="text">
+                <input name="phone" required placeholder="Ваш телефон" maxlength="11" pattern="(\+?\d[- .]*){7,13}" type="number">
+                <input name="email" required placeholder="Ваше E-mail" maxlength="30" type="email">
                 <button class="button_submit">заказать консультацию</button>
             </form>
         </div>
@@ -441,10 +441,13 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__description">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваше E-mail" type="email">
-                <button class="button_submit">заказать консультацию</button>
+                <input name="name"   placeholder="Ваше имя" maxlength="15" type="text">
+                <span></span>
+                <input name="phone"  placeholder="Ваш телефон" maxlength="11" type="number">
+                <span></span>
+                <input name="email"  placeholder="Ваше E-mail" maxlength="30" >
+                <span></span>
+                <button class="button_submit" type="submit">заказать консультацию</button>
             </form>
         </div>
         <div class="modal" id="order">
@@ -452,10 +455,10 @@
             <div class="modal__subtitle">Ваш заказ:</div>
             <div class="modal__description">Пульсометр Polar FT1</div>
             <form class="feed-form feed-form_mt25" action="#">
-                <input name="name" required placeholder="Ваше имя" type="text">
-                <input name="phone" required placeholder="Ваш телефон" type="number">
-                <input name="email" required placeholder="Ваше E-mail" type="email">
-                <button class="button_submit">купить</button>
+                <input name="name" required placeholder="Ваше имя" maxlength="15" type="text">
+                <input name="phone" required placeholder="Ваш телефон" maxlength="11" type="number">
+                <input name="email" required placeholder="Ваше E-mail" maxlength="30" type="email">
+                <button class="button_submit" type="submit">купить</button>
             </form>
         </div>
         <div class="modal modal_mini" id="thanks">
