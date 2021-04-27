@@ -70,12 +70,12 @@ window.addEventListener('DOMContentLoaded', function(){
         
                 overlayShow();
                 modalConsultatin.style.display = 'block';
-                document.body.style.position = 'fixed';
+                
             });
             modalConsultatin.firstElementChild.addEventListener('click', function(){
                 modalConsultatin.style.display = 'none';
                 overlay.style.display = 'none';
-                document.body.style.position = '';
+                
                
             });
         });
@@ -101,13 +101,34 @@ window.addEventListener('DOMContentLoaded', function(){
         //validationForm
         let formsConsultation = document.querySelectorAll('.feed-form')[1],
             //regPhone = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
-            regPhone2 = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/;
+            regPhone2 = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/,
+            regName = /^[a-zA-Zа-яА-Я '.-]*$/;
 
             formsConsultation.addEventListener('submit', formSend);
 
-            function formSend(e){
+            async function formSend(e){
                 e.preventDefault();
-                let error = formValidate(formsConsultation);
+                let error = formValidate(formsConsultation),
+                    formData = new FormData(formsConsultation);
+                if(error === 0){
+                    formsConsultation.classList.add('feed-form_sending');
+                    let response = await fetch('sendmail.php',{
+                        method: 'POST',
+                        body: formData
+                    });
+                    if(response.ok){
+                        let result = await response.json();
+                        alert(result.message);
+                        formsConsultation.reset();
+                        formsConsultation.classList.remove('feed-form_sending');
+                    }else{
+                        alert("Ошибка!");
+                        formsConsultation.classList.remove('feed-form_sending');
+                    }
+                   
+                }else{
+                   alert("Заполните все поля!");
+                }
 
             }
         
@@ -132,18 +153,19 @@ window.addEventListener('DOMContentLoaded', function(){
                      }else if(i == 1 && !regPhone2.test(input.value)){ //проверяем телефон
                         addError(input);
                         error++;
+                     }else if(i == 0 && !regName.test(input.value)){
+                         addError(input);
+                         error++;
                      }
                      
                  }
                  return error;
             }
             function addError(input){
-                input.nextElementSibling.style.display = 'inline-block';
-                input.nextElementSibling.textContent = 'Поле не заполнено!';
+                input.classList.add('_error');
             }
             function removeError(input){
-                input.nextElementSibling.style.display = 'none';
-                input.nextElementSibling.textContent = '';
+                input.classList.remove('_error');
 
             }
             function testEmail(input){
