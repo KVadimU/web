@@ -104,7 +104,7 @@ window.addEventListener('DOMContentLoaded', function(){
         let input = document.querySelectorAll('[name="phone"]');
             //input.addEventListener("input", mask, false);
             input.forEach(function(item, i, input){
-                item.addEventListener('input', mask, false);
+            item.addEventListener('input', mask, false);
            
         function setCursorPosition(pos, item) {
                 item.focus();
@@ -151,7 +151,7 @@ window.addEventListener('DOMContentLoaded', function(){
                     formData = new FormData(item);
                 if(error === 0){
                     item.classList.add('feed-form_sending');
-                    let response = await fetch('../js/mailer/smart.php',{
+                    let response = await fetch('sendmail.php',{
                         method: 'POST',
                         body: formData
                     });
@@ -164,11 +164,9 @@ window.addEventListener('DOMContentLoaded', function(){
                         alert("Ошибка!");
                         item.classList.remove('feed-form_sending');
                     }
-                   
                 }else{
                    alert("Заполните все поля!");
                 }
-
             }
         
             function formValidate(item){
