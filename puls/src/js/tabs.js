@@ -138,35 +138,31 @@ window.addEventListener('DOMContentLoaded', function(){
         //validationForm
         ///////////////////////////////////////////////////////////////////////
 
-        let formsConsultation = document.querySelectorAll('.feed-form')[1],
-            formsConsultation2 = document.querySelectorAll('.feed-form')[0],
-            //regPhone = /^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$/;
+        let formsConsultation = document.querySelectorAll('.feed-form'),
             regPhone2 = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){6,14}(\s*)?$/,
-            regName = /^[a-zA-Zа-яА-Я '.-]*$/,
-            error = 0;
-           
-        
-            formsConsultation.addEventListener('submit', formSend);
-           
+            regName = /^[a-zA-Zа-яА-Я '.-]*$/;
 
+            formsConsultation.forEach(function(item,i,formsConsultation){     
+            item.addEventListener('submit', formSend);
+           
             async function formSend(e){
                 e.preventDefault();
-                let error = formValidate(formsConsultation),
-                    formData = new FormData(formsConsultation);
+                let error = formValidate(item),
+                    formData = new FormData(item);
                 if(error === 0){
-                    formsConsultation.classList.add('feed-form_sending');
-                    let response = await fetch('sendmail.php',{
+                    item.classList.add('feed-form_sending');
+                    let response = await fetch('../js/mailer/smart.php',{
                         method: 'POST',
                         body: formData
                     });
                     if(response.ok){
                         let result = await response.json();
                         alert(result.message);
-                        formsConsultation.reset();
-                        formsConsultation.classList.remove('feed-form_sending');
+                        item.reset();
+                        item.classList.remove('feed-form_sending');
                     }else{
                         alert("Ошибка!");
-                        formsConsultation.classList.remove('feed-form_sending');
+                        item.classList.remove('feed-form_sending');
                     }
                    
                 }else{
@@ -175,9 +171,10 @@ window.addEventListener('DOMContentLoaded', function(){
 
             }
         
-            function formValidate(formsConsultation){
-               
-                   let formInp = formsConsultation.querySelectorAll('input');
+            function formValidate(item){
+                   console.log(item);
+                   let formInp = item.querySelectorAll('input'),
+                        error = 0;
                  for (let i = 0; i < formInp.length; i++) {
                      const input = formInp[i];
                      console.log(input);
@@ -188,91 +185,28 @@ window.addEventListener('DOMContentLoaded', function(){
                              addError(input);
                              error++;
                          }
-
                      }else if(input.value === ''){
                          addError(input);
                          error++;
-
                      }else if(i == 1 && !regPhone2.test(input.value)){ //проверяем телефон
                         addError(input);
                         error++;
-                     }else if(i == 0 && !regName.test(input.value)){
+                     }else if(i == 0 && !regName.test(input.value)){//проверяем имя
                          addError(input);
                          error++;
                      }
-                     
                  }
                  return error;
             }
+        });
             function addError(input){
                 input.classList.add('_error');
             }
             function removeError(input){
                 input.classList.remove('_error');
-
             }
             function testEmail(input){
                 return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
-
             }
         
-            ///////////////////////////////////////////////////
-            //форма консультации 2
-            /////////////////////////////////////////////////////
-            async function formSend2(e){
-                e.preventDefault();
-                let error = formValidate2(formsConsultation2),
-                    formData = new FormData(formsConsultation2);
-                if(error === 0){
-                   // formsConsultation.classList.add('feed-form_sending');
-                    let response = await fetch('sendmail.php',{
-                        method: 'POST',
-                        body: formData
-                    });
-                    if(response.ok){
-                        let result = await response.json();
-                        alert(result.message);
-                        formsConsultation2.reset();
-                       // formsConsultation.classList.remove('feed-form_sending');
-                    }else{
-                        alert("Ошибка!");
-                       //formsConsultation.classList.remove('feed-form_sending');
-                    }
-                }else{
-                   alert("Заполните все поля!");
-                }
-
-            }
-        
-            formsConsultation2.addEventListener('submit', formSend2);
-            function formValidate2(formsConsultation2){
-                let formInp = formsConsultation2.querySelectorAll('input');
-                 for (let i = 0; i < formInp.length; i++) {
-                     const input = formInp[i];
-                     console.log(input);
-                     removeError(input);
-                     if(i == 2){   //проверяем email
-                         console.log(input.value);
-                         if(testEmail(input)){
-                             addError(input);
-                             error++;
-                         }
-                     }else if(input.value === ''){
-                         addError(input);
-                         error++;
-
-                     }else if(i == 1 && !regPhone2.test(input.value)){ //проверяем телефон
-                        addError(input);
-                        error++;
-                     }else if(i == 0 && !regName.test(input.value)){
-                         addError(input);
-                         error++;
-                     }
-                     
-                 }
-                 return error;
-            }
-
-      
-
 });
