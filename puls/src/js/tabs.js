@@ -160,6 +160,22 @@ window.addEventListener('DOMContentLoaded', function(){
                         alert(result.message);
                         item.reset();
                         item.classList.remove('feed-form_sending');
+                        if(i == 0){
+                        overlayShow();
+                        let thanks = document.getElementById('thanks');
+                        thanks.style.display = 'block';
+                        thanks.firstElementChild.addEventListener('click', function(){
+                        thanks.style.display = 'none';
+                        thanks.parentElement.style.display = 'none';
+                        });
+                        }else{
+                            item.parentElement.style.display = 'none';
+                            thanks.style.display = 'block';
+                            thanks.firstElementChild.addEventListener('click', function(){
+                            thanks.style.display = 'none';
+                            thanks.parentElement.style.display = 'none';
+                            });
+                        }
                     }else{
                         alert("Ошибка!");
                         item.classList.remove('feed-form_sending');
