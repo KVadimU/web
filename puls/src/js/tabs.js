@@ -230,14 +230,15 @@ window.addEventListener('DOMContentLoaded', function(){
         const arrowUp = document.querySelector('.pageup');
         this.addEventListener('scroll', function(){
         if(window.pageYOffset > 1600){
-           // console.log(window.scrollY);
-            arrowUp.style.display = 'block';
-           
+            arrowUp.classList.remove("animate__fadeOutDown");
+            arrowUp.style.visibility = 'visible';
+            arrowUp.classList.add("animate__fadeInUp");
         }else{
-            arrowUp.style.display = 'none';
+            arrowUp.classList.remove("animate__fadeInUp");
+            arrowUp.classList.add("animate__fadeOutDown");
         }
         });
-
+       
         arrowUp.addEventListener('click', function(event){
             event.preventDefault();
             let href = arrowUp.getAttribute('href').substring(1);
@@ -252,4 +253,7 @@ window.addEventListener('DOMContentLoaded', function(){
                 behavior: 'smooth'
             });
         });
+        //////////////////////////////////////////////
+        /////////////////////////////////////////////
+       
     });    
