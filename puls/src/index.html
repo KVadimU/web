@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="css/fonts.css">
     <!-- <link rel="stylesheet" href="css/slick.css"> -->
     <link rel="stylesheet" href="css/tiny-slider.css">
+    <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/style.min.css">
     <title>Puls</title>
 </head>
 <body>
-    <section class="promo">
+    <section class="promo" id="up">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -72,7 +73,7 @@
                          готовятся к соревнованиям по триатлону!</div>
                 </div>
                 <div class="advantage__icon">
-                    <img src="img/icons/heart.png" alt="heart">
+                    <img src="img/icons/heart.png" alt="heart" class="advantage__icon_animated">
                     <div class="advantage__title">Заботимся о здоровье</div>
                     <div class="advantage__descr">Мы работаем для того, чтобы Ваши занятия спортом шли на пользу
                          Вашему здоровью и были в радость Вам и Вашим близким!</div>
@@ -376,7 +377,7 @@
         <div class="container">
             <div class="reviews__title">отзывы клиентов</div>
             <div class="reviews__list">
-                <div class="reviews__item">
+                <div class="reviews__item animate__animated animate__fadeInUp">
                     <div class="reviews__item__img"><img src="img/photo_1.png" alt="reviews"></div>
                     <div class="reviews__item__text">
                     <div class="reviews__item__title">
@@ -464,6 +465,9 @@
             <div class="modal__description">Наш менеджер свяжиться с вами в ближайшее время!</div>
         </div>
     </div>
+    <a href="#up" class="pageup">
+        <img src="img/icons/arrowUp.svg" alt="up">
+    </a>
     <!--Для слик-слайдера-->
     <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> -->
     <!-- <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->

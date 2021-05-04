@@ -222,5 +222,34 @@ window.addEventListener('DOMContentLoaded', function(){
             function testEmail(input){
                 return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
             }
-        
-});
+        ///////////////////////////////////   
+        //////////////////////////////////
+        ////Плавный скрол страницы вверх
+        ////////////////////////////////
+        ///////////////////////////////
+        const arrowUp = document.querySelector('.pageup');
+        this.addEventListener('scroll', function(){
+        if(window.pageYOffset > 1600){
+           // console.log(window.scrollY);
+            arrowUp.style.display = 'block';
+           
+        }else{
+            arrowUp.style.display = 'none';
+        }
+        });
+
+        arrowUp.addEventListener('click', function(event){
+            event.preventDefault();
+            let href = arrowUp.getAttribute('href').substring(1);
+               // console.log(href);
+            const scrollTarget = document.getElementById(href);
+            //let topOffset = document.querySelector('.up').offsetHeight;
+                let topOffset = 0; // если не нужен отступ сверху 
+            const elementPosition = scrollTarget.getBoundingClientRect().top;
+            const offsetPosition = elementPosition - topOffset;
+            window.scrollBy({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        });
+    });    

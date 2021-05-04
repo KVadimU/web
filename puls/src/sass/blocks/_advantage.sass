@@ -14,6 +14,13 @@
     &__icon
         text-align: center
         width: 277px
+        &_animated
+            animation-name: heartbeat
+            animation-duration: 1.5s
+            animation-timing-function: ease
+            animation-iteration-count: infinite
+            &:hover
+                animation-play-state: paused
         img
             display: block
             margin: 0 auto
