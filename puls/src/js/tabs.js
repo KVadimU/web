@@ -253,7 +253,30 @@ window.addEventListener('DOMContentLoaded', function(){
                 behavior: 'smooth'
             });
         });
-        //////////////////////////////////////////////
-        /////////////////////////////////////////////
+        ///////////////////////////////
+        //////////////////////////////
+        ////Плавное появление отзывов
+        ////////////////////////////
+        ///////////////////////////
+        let revItem = document.querySelectorAll('.reviews__item')[0];
+            
+                this.addEventListener('scroll', function(){
+            
+            if(offset(revItem) < this.pageYOffset){
+                revItem.style.opacity = 1;  
+                revItem.classList.add("animate__fadeInUp");
+            }else{
+                revItem.classList.remove("animate__fadeInUp");
+                revItem.style.opacity = 0;
+            }
+        
+        });
+
+                
+        function offset(el) {
+            var rect = el.getBoundingClientRect(),
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            return (rect.top + scrollTop)- document.documentElement.clientHeight;
+        }
        
     });    
