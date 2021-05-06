@@ -258,25 +258,37 @@ window.addEventListener('DOMContentLoaded', function(){
         ////Плавное появление отзывов
         ////////////////////////////
         ///////////////////////////
-        let revItem = document.querySelectorAll('.reviews__item')[0];
+        let revItem = document.querySelectorAll('.reviews__item');
             
                 this.addEventListener('scroll', function(){
-            
-            if(offset(revItem) < this.pageYOffset){
-                revItem.style.opacity = 1;  
-                revItem.classList.add("animate__fadeInUp");
+            revItem.forEach(function(item, i, revItem){
+            if(offset(item) < window.pageYOffset){
+                item.style.opacity = 1;  
+                item.classList.add("animate__fadeInUp");
             }else{
-                revItem.classList.remove("animate__fadeInUp");
-                revItem.style.opacity = 0;
+                item.classList.remove("animate__fadeInUp");
+                item.style.opacity = 0;
             }
-        
+        });
         });
 
-                
         function offset(el) {
             var rect = el.getBoundingClientRect(),
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             return (rect.top + scrollTop)- document.documentElement.clientHeight;
         }
-       
-    });    
+        /////////////////////////////////
+        ////////////////////////////////
+        ////Прогресс бар при прокрутке
+        //////////////////////////////
+        /////////////////////////////
+        window.addEventListener('scroll', function(){progresBar()});
+
+        function progresBar() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop,
+                height = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+                scrolled = (winScroll / height) * 100;
+                document.querySelector('.progress__bar').style.width = scrolled + "%";
+        }
+
+});    
