@@ -290,5 +290,6 @@ window.addEventListener('DOMContentLoaded', function(){
                 scrolled = (winScroll / height) * 100;
                 document.querySelector('.progress__bar').style.width = scrolled + "%";
         }
+       
 
 });    
