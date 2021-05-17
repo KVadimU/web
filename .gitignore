@@ -4,3 +4,4 @@
 /**/gulpfile.js
 /**/package-lock.json
 !puls/gulpfile.js
+!portfolio/gulpfile.js
