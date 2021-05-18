@@ -5,6 +5,7 @@
     background: url(../../img/bg-main.jpg) center (center/cover) no-repeat;
     &__title{
         margin-top: 10px;
+        text-align: center;
         font-weight: 700;
         font-size: 48px;
         line-height: 60px;
@@ -14,10 +15,20 @@
         font-weight: 700;
         font-size: 16px;
         line-height: 24px;
+        text-align: center;
         color: $color-title;
+        z-index: 1;
+        &_decoration{
+            position: relative;
+            @include before_circle;
+        }
     }
+    
     &__btns{
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
         margin-top: 25px;
         width: 250px;
     }
