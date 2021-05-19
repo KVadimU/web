@@ -8,6 +8,12 @@
     align-items: center;
     height: 355px;
     z-index: 2;
+    a{
+        &:hover{
+            transform: scaleX(-1);
+            transition: all 0.8s;
+        }
+    }
     &__link{
         img{
             width: 50px;
