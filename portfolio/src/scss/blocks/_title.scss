@@ -1,0 +1,26 @@
+.title{
+    margin-top: 10px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 60px;
+    color: $color-title-darck;
+    &_fz36{
+        font-size: 36px;
+    }
+    &_fz14{
+        font-size: 14px;
+    }
+}
+.subtitle{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: $color-title-darck;
+    z-index: 1;
+    &_decoration{
+        position: relative;
+        @include before_circle;
+    }
+}

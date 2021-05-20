@@ -9,13 +9,17 @@ window.addEventListener('DOMContentLoaded', function(){
     close.addEventListener('click',()=>{
         menu.classList.remove('active');
     });
-
+        /////////////
+      ///////////////
+    ////sidepanel////
+    ///////////////
+    /////////////
     document.addEventListener('scroll', ()=>{
         let sidePanelText = document.querySelector('.sidepanel__text'),
             sidePanelDivider = document.querySelector('.sidepanel__divider'),
             linkVk = document.querySelectorAll('.sidepanel__link')[0],
             linkGitHub = document.querySelectorAll('.sidepanel__link')[1];
-        console.log(window.pageYOffset);
+        //console.log(window.pageYOffset);
         if(window.pageYOffset > 300){
             sidePanelText.style.color = '#000000';      
         };
