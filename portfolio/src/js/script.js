@@ -1,5 +1,10 @@
 'use strict';
 window.addEventListener('DOMContentLoaded', function(){
+        ////////
+      //////////
+    ////menu////
+    //////////
+    ////////
     let hamburger = document.querySelector('.hamburger'),
         menu = document.querySelector('.menu'),
         close = document.querySelector('.menu__close');
@@ -45,4 +50,42 @@ window.addEventListener('DOMContentLoaded', function(){
             linkVk.firstChild.setAttribute("src", "img/icons/vk.png");
         };
     });
+        ////////////////
+      //////////////////
+    ////progress bar////
+    //////////////////
+    ////////////////
+        let percents = document.querySelectorAll('.progress__item-percent'),
+            line = document.querySelectorAll('.progress__item-bar span'),
+            blockProgress = document.querySelector('.progress');
+
+            this.addEventListener('scroll', () => {
+                if(offset(blockProgress) > window.pageYOffset){
+                    percents.forEach((item, i) => {
+                        let count = 0,
+                            timer = setInterval(draw, 10);
+
+                        function draw(){
+                            if(line[i].style.width == item.innerHTML){
+                                clearInterval(timer);
+                            }else{
+                                count++;
+                                line[i].style.width = count+'%' ;
+                            }
+                        }
+                        line[i].style.width = 0 + '%';
+                    }); 
+                }
+            });
+
+            function offset(el) {
+                let rect = el.getBoundingClientRect(),
+                scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                return (rect.top + scrollTop)- document.documentElement.clientHeight;
+            }
+            
+
+            
+         
+        
 });

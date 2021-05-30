@@ -76,11 +76,16 @@
             height: 14px;
             background-color: $color-bg-bar;
             border-radius: 4px;
+            span{
+                display: block;
+                height: 14px;
+                background-color: $second-color;
+                border-radius: 4px;
+                transition: all 0.6s;
+            }
+            
         }
-        &-filling{
-            height: 14px;
-            background-color: $second-color;
-            border-radius: 4px;
-        }
+        
+        
     }
 }
