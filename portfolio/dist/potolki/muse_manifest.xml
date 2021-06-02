@@ -1,0 +1,78 @@
+<manifest alg="2" build="2018.1.0.386" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="www.nebula03.ru" resolutions="1x" timestamp="1544453130295">
+  <folder name="css">
+    <file name="site_global.css" crc="518888299"/>
+    <file name="index.css" crc="3832876194" ref="index"/>
+    <file name="iefonts_index.css" crc="2698152" ref="index"/>
+  </folder>
+  <folder name="fonts">
+    <file name="bigbossicon1.woff" crc="331700122"/>
+    <file name="bigbossicon1.eot" crc="492749460"/>
+    <file name="bigbossicon1.svg" crc="4248078019"/>
+  </folder>
+  <folder name="assets">
+    <file name="animate.min.css" crc="4278629860" seo="true" mt="1399177642000"/>
+    <file name="wow.min.js" crc="4197050012" seo="true" mt="1399177642000"/>
+    <file name="матовые1.jpg" crc="241832009" seo="true" mt="1543741458000"/>
+    <file name="глянцевые1.jpg" crc="390539957" seo="true" mt="1543741346000"/>
+    <file name="сатиновые.jpg" crc="181643148" seo="true" mt="1543741491000"/>
+    <file name="foto.jpg" crc="3784627151" seo="true" mt="1543741676000"/>
+    <file name="прайс-лист.doc" crc="3985236125" seo="true" mt="1544077743000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index"/>
+    <file name="museutils.js" crc="340535759" ref="index"/>
+    <file name="whatinput.js" crc="86476730" ref="index"/>
+    <file name="museconfig.js" crc="4286661555" ref="index"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4260645839" ref="index"/>
+    <file name="jquery.watch.js" crc="51536988" ref="index"/>
+    <file name="webpro.js" crc="4059564322" ref="index"/>
+    <file name="form_check.php" crc="4020933626" ref="index"/>
+    <file name="form_throttle.php" crc="4259590256" ref="index"/>
+    <file name="form_process.php" crc="37464564" ref="index"/>
+    <file name="form-u6026.php" crc="4291788605" ref="index"/>
+    <file name="musewpslideshow.js" crc="3862962738" ref="index"/>
+    <file name="jquery.museoverlay.js" crc="4147669564" ref="index"/>
+    <file name="touchswipe.js" crc="4075097462" ref="index"/>
+    <file name="jquery.musemenu.js" crc="510910590" ref="index"/>
+    <file name="form-u6193.php" crc="4149718739" ref="index"/>
+    <file name="form-u7371.php" crc="213562969" ref="index"/>
+    <file name="jquery.scrolleffects.js" crc="39568856" ref="index"/>
+    <file name="html5shiv.js" crc="4241844378" ref="index"/>
+    <file name="require.js" crc="7928878" ref="index"/>
+    <file name="form-u11431.php" crc="85236026" ref="index"/>
+    <file name="form-u11711.php" crc="378187087" ref="index"/>
+    <file name="form-u11617.php" crc="43424239" ref="index"/>
+    <file name="form-u11531.php" crc="4290490708" ref="index"/>
+    <file name="form-u11799.php" crc="3766434526" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="77-u94-fr.png" crc="3900693003" ref="index"/>
+    <file name="rect3713.png" crc="4258154121" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="1.jpg" crc="395662477" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="2.jpg" crc="300194590" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="3.jpg" crc="39758917" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="2-7.jpg" crc="431839103" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="path843.png" crc="232342555" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="path844.png" crc="367526151" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="loading.gif" crc="3815509949" ref="index"/>
+    <file name="blank.gif" crc="4208392903" ref="index"/>
+    <file name="logo2.png" crc="3995938074" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="3983306227" seo="true" mt="1544453013969" redirect="true"/>
+</manifest>
