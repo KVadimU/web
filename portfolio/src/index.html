@@ -43,8 +43,8 @@
 </head>
 <body>
     <aside class="sidepanel">
-        <a href="#" class="sidepanel__link"><img src="img/icons/vk.png" alt="vk"></a>
-        <a href="#" class="sidepanel__link"><img src="img/icons/github.svg" alt="github"></a>
+        <a href="https://vk.com/don_romata_estorskiy" class="sidepanel__link" target="_blank"><img src="img/icons/vk_green.png" alt="vk"></a>
+        <a href="https://github.com/KVadimU" class="sidepanel__link" target="_blank"><img src="img/icons/github_green.svg" alt="github"></a>
         <div class="sidepanel__divider"></div>
         <div class="sidepanel__text"><span>Социальные сети</span></div>
     </aside>
@@ -62,12 +62,12 @@
             </div>
             <nav>
                 <ul class="menu__list">
-                    <li class="menu__link"><a href="#">Про меня</a></li>
-                    <li class="menu__link"><a href="#">Мой опыт</a></li>
-                    <li class="menu__link"><a href="#">Мои навыки</a></li>
-                    <li class="menu__link"><a href="#">Мои работы</a></li>
-                    <li class="menu__link"><a href="#">Прайс лист</a></li>
-                    <li class="menu__link"><a href="#">Контакты</a></li>
+                    <li class="menu__link"><a href="#about">Про меня</a></li>
+                    <li class="menu__link"><a href="#experience">Мой опыт</a></li>
+                    <li class="menu__link"><a href="#skills">Мои навыки</a></li>
+                    <li class="menu__link"><a href="#portfolio">Мои работы</a></li>
+                    <li class="menu__link"><a href="#price">Прайс лист</a></li>
+                    <li class="menu__link"><a href="#contacts">Контакты</a></li>
                 </ul>
             </nav>
             <div class="menu__social">
@@ -87,16 +87,18 @@
             <div class="promo__subtitle promo__subtitle_decoration">Меня зовут Вадим Калашников</div>
             <h1 class="promo__title">Я web-разработчик из города Улан-Удэ</h1>
                 <div class="promo__btns">
-                    <a href="#" class="promo__link btn">Портфолио</a>
-                    <a href="#" class="promo__link">Про меня</a>
+                    <a href="#portfolio" class="promo__link btn">Портфолио</a>
+                    <a href="#about" class="promo__link">Про меня</a>
                 </div>
         </div>
     </section>
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
             <div class="about__wrapper">
                 <div class="about__photo">
-                    <img src="img/my-foto2.jpg"  alt="photo">
+                
+                        <img src="img/myPhoto.jpg"  alt="photo">
+                    
                 </div>
                 <div class="about__description">
                     <h2 class="subtitle subtitle_decoration">Про меня</h2>
@@ -152,7 +154,7 @@
             </div>
         </div>
     </section>
-    <section class="resume">
+    <section id="experience" class="resume">
         <div class="container">
             <h2 class="subtitle subtitle_resume">Опыт</h2>
             <div class="title title_fz36">Чем я буду полезен</div>
@@ -231,7 +233,7 @@
             </div>
         </div>
     </section>
-    <section class="skills">
+    <section id="skills" class="skills">
         <div class="container">
             <h2 class="subtitle subtitle_resume">Навыки</h2>
             <div class="title title_fz36">Что я использую в работе</div>
@@ -348,31 +350,31 @@
                 </div>
         </div>
     </section>
-    <section class="portfolio">
+    <section id="portfolio" class="portfolio">
         <div class="container">
             <h2 class="subtitle subtitle_resume">Портфолио</h2>
             <div class="title title_fz36">Мои работы</div>
             <div class="divider divider__resume"></div>
             <div class="portfolio__wrapper">
-                <a href="/wordpress" class="portfolio__item">
+                <a href="/wordpress" class="portfolio__item" target="_blank">
                     <img src="img/works/wordpress.jpg" alt="wordpress">
                 </a>
-                <a href="/yoga" class="portfolio__item horizontal">
+                <a href="/yoga" class="portfolio__item horizontal" target="_blank">
                     <img src="img/works/yoga.jpg" alt="yoga">
                 </a>
-                <a href="/uber" class="portfolio__item">
+                <a href="/uber" class="portfolio__item" target="_blank">
                     <img src="img/works/uber.jpg" alt="uber">
                 </a>
-                <a href="/potolki" class="portfolio__item horizontal-1-3">
+                <a href="/potolki" class="portfolio__item horizontal-1-3" target="_blank">
                     <img src="img/works/potolki.jpg" alt="potolki">
                 </a>
-                <a href="/puls" class="portfolio__item horizontal-3-5">
+                <a href="/puls" class="portfolio__item horizontal-3-5" target="_blank">
                     <img src="img/works/pulse.jpg" alt="puls">
                 </a>
             </div>
         </div>
     </section>
-    <section class="price">
+    <section id="price" class="price">
         <div class="container">
             <h2 class="subtitle subtitle_resume">Прайс-лист</h2>
             <div class="divider divider__resume divider__price"></div>
@@ -410,11 +412,11 @@
 
         </div>
     </section>
-    <section class="contacts"> 
+    <section id="contacts" class="contacts"> 
         <div class="container">
             <div class="contacts__wrapper">
-                <div class="about__photo">
-                    <img src="img/myPhoto.jpg"  alt="photo">
+                <div class="contacts__photo">
+                    <img src="img/my-foto1.jpg"  alt="photo">
                 </div>
                 <div class="contacts__description">
                     <h2 class="subtitle subtitle_decoration">Контакты</h2>
@@ -422,10 +424,10 @@
                     <div class="divider"></div>
                     <div class="title title_fz14 contacts__text">Любым удобным для вас способом:</div>
                     <div class="contacts__social">
-                        <a href="#" class="contacts__link">
+                        <a href="https://vk.com/don_romata_estorskiy" class="contacts__link" target="_blank">
                             <img src="img/icons/vk_green.png" alt="vk">
                         </a>
-                        <a href="#" class="contacts__link">
+                        <a href="https://github.com/KVadimU" class="contacts__link" target="_blank">
                             <img src="img/icons/github_green.svg" alt="github">
                         </a>
                     </div>

@@ -8,27 +8,23 @@
     align-items: center;
     height: 355px;
     z-index: 2;
-    a{
-        &:hover{
-            transform: scaleX(-1);
-            transition: all 0.8s;
-        }
-    }
+    
     &__link{
         img{
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
         }
     }
     &__divider{
-        width: 2px;
+        width: 3px;
         height: 70px;
-        background-color: #FFFFFF;
+        background-color: $main-color;
     }
     &__text{
+        font-weight: 700;
         height: 150px;
         width: 25px;
-        color: $color-title;
+        color: $main-color;
         span{
             display: block;
             width: 150px;
