@@ -1,0 +1,93 @@
+@media (max-width: 1200px) {
+    .container{
+        max-width: 960px;
+    }
+    .promo__subtitle_decoration{
+        &::before{
+            left: 345px;
+        }
+    }
+    .promo__title{
+        font-size: 40px;
+    }
+    .sidepanel{
+        top: 181px;
+        left: 27px;
+    }
+    .about{
+        &__wrapper{
+            grid-template-columns: 400px 520px;
+            column-gap: 38px;
+        }
+        &__skills{
+            grid-template-columns: 254px 254px;
+            column-gap: 10px;
+        }
+    }
+}
+@media (max-width: 992px) {
+    .container{
+        max-width: 720px;
+    }
+    .promo__subtitle_decoration{
+        &::before{
+            left: 226px;
+        }
+    }
+    .sidepanel{
+        display: none;
+    }
+    .promo__title{
+        font-size: 36px;
+    }
+}
+@media (max-width: 768px) {//планшеты
+    .container{
+        max-width: 540px;
+    }
+    .promo__subtitle_decoration{
+        &::before{
+            left: 137px;
+        }
+    }
+    
+}
+@media (max-width: 576px) {//смартфоны
+    .container{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .promo__subtitle_decoration{
+        &::before{
+            left: 124px;
+        }
+    }
+    .promo__title{
+        font-size: 34px;
+    }
+    .menu{
+        &__block{
+            width: 250px;
+            padding-left: 20px;
+        }
+    }
+}
+@media (max-width: 320px) {//смартфоны
+    .container{
+        width: 100%;
+        padding: 0 10px;
+    }
+    .promo{
+        &__subtitle_decoration{
+            &::before{
+                left: 17px;
+            }
+        }
+        &__title{
+            font-size: 34px;
+            line-height: 44px;
+            font-size: 27px;
+        }
+    }
+    
+}
