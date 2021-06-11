@@ -137,26 +137,54 @@
     }
     .title_fz36{
         font-size: 26px;
-        line-height: 47px;
+        line-height: 36px;
     }
-
-}
-@media (max-width: 320px) {//смартфоны
-    .container{
-        width: 100%;
-        padding: 0 10px;
-    }
-    .promo{
-        &__subtitle_decoration{
-            &::before{
-                left: 17px;
-            }
+    .skills{
+        margin-top: 26px;
+        &__wrapper{
+            grid-template-columns: 1fr;
         }
-        &__title{
-            font-size: 34px;
-            line-height: 44px;
-            font-size: 27px;
+    }
+    .progress{
+        margin-top: 50px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 70px);
+    }
+    .portfolio{
+        padding-top: 26px;
+        &__wrapper{
+            margin-top: 40px;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(5, auto);
+            .horizontal{
+                grid-column: 1 / 2;
+            }
+            .horizontal-1-3{
+                grid-column: 1 / 2;
+            }
+            .horizontal-3-5{
+                grid-column: 1 / 2;
+            }
         }
     }
     
 }
+// @media (max-width: 320px) {//смартфоны
+//     .container{
+//         width: 100%;
+//         padding: 0 10px;
+//     }
+//     .promo{
+//         &__subtitle_decoration{
+//             &::before{
+//                 left: 17px;
+//             }
+//         }
+//         &__title{
+//             font-size: 34px;
+//             line-height: 44px;
+//             font-size: 27px;
+//         }
+//     }
+    
+// }
