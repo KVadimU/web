@@ -167,6 +167,41 @@
             }
         }
     }
+    .price{
+        margin-top: 26px;
+        &-list{
+            grid-template-columns: 1fr;
+            &__item{
+                width: 298px;
+            }
+        }
+    }
+    .divider__price{
+        margin-top: 18px;
+    }
+    .contacts{
+        &__wrapper{
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
+        padding-top: 26px;
+        &__photo{
+            display: none;
+        }
+        &__form{
+            grid-template-columns: 1fr;
+            grid-template-rows: 45px 45px 190px;
+        }
+        &__input{
+            grid-column: 1 / 2;
+        }
+        &__triggers{
+            grid-template-columns: 1fr;
+        }
+        &__policy{
+            margin-top: 24px;
+        }
+    }
     
 }
 // @media (max-width: 320px) {//смартфоны
